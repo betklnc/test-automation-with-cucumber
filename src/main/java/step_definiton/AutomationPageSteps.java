@@ -43,12 +43,11 @@ public class AutomationPageSteps {
 
     @When("type Automation on search box")
     public void type_automation_on_search_box() {
-
+        autoPage.typeSearchingKey();
     }
 
     @Then("verify the searching results")
     public void verify_the_searching_results() {
-
+        autoPage.assertMyMessage();
     }
-
 }

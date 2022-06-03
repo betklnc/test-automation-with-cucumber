@@ -8,10 +8,10 @@ Feature:  Obss Automation Web Page Test
    When type Automation on search box
    Then verify the searching results
 
-  Scenario: Verify Testing And Automation page
-   And type Automation on search box
-   When click on first result
-   Then verify the Testing and Automation page is opened
+ # Scenario: Verify Testing And Automation page
+ #  And type Automation on search box
+ #  When click on first result
+ #  Then verify the Testing and Automation page is opened
 
   #Scenario: Verify the page footer
   #  And type Automation on search box
