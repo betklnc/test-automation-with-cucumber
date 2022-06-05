@@ -25,6 +25,9 @@ public class AutomationPage extends PageAbstractClass {
     @FindBy(id = "search-box")
     private WebElement searchTextArea;
 
+    @FindBy(xpath = "/html/body/div[3]/div/div[2]/div/div[2]/article[1]/h2/a")
+    private WebElement firstSearchResult;
+
     public AutomationPage() {
         driver = Driver.getDriver();
         PageFactory.initElements(driver, this);
@@ -40,5 +43,9 @@ public class AutomationPage extends PageAbstractClass {
 
     public void assertMyMessage() {
         Assertion(rows, 8);
+    }
+
+    public void clickOnFirstSearchResult() {
+        clickFunction(firstSearchResult);
     }
 }

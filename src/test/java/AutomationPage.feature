@@ -7,6 +7,7 @@ Feature:  Obss Automation Web Page Test
  Scenario: Verify Automation search results
    When type Automation on search box
    Then verify the searching results
+   When click on first result
 
  # Scenario: Verify Testing And Automation page
  #  And type Automation on search box

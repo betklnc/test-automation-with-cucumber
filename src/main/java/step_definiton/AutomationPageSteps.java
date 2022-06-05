@@ -50,4 +50,10 @@ public class AutomationPageSteps {
     public void verify_the_searching_results() {
         autoPage.assertMyMessage();
     }
+
+
+    @When("click on first result")
+    public void clickOnFirstResult() {
+        autoPage.clickOnFirstSearchResult();
+    }
 }
