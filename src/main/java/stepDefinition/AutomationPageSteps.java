@@ -1,4 +1,4 @@
-package step_definiton;
+package stepDefinition;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -11,13 +11,12 @@ import utilities.Driver;
 import java.time.Duration;
 
 public class AutomationPageSteps {
-    private WebDriver driver;
 
     AutomationPage autoPage = new AutomationPage();
 
     @Given("navigate to website")
     public void navigate_to_website() {
-        driver = Driver.getDriver();
+        WebDriver driver = Driver.getDriver();
         driver.manage().window().maximize();
         driver.get("https://obss.com.tr/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -25,7 +24,7 @@ public class AutomationPageSteps {
         try {
             driver.findElement(By.id("cookieAcceptance")).click();
         } catch (Exception ex) {
-            // todo
+            // do nothing if cookie pop-up doesn't display
         }
     }
 
