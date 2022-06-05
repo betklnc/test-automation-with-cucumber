@@ -36,7 +36,10 @@ public abstract class PageAbstractClass {
 
     public void Assertion(List<WebElement> actual, int expected) {
         assertEquals(actual.size(), expected);
-        System.out.println("size --->>>" + actual.size());
+    }
+
+    public void AssertAutomationPageOpened(String actual, String expected) {
+        assertEquals(actual, expected);
     }
 }
 

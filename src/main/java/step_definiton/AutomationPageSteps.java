@@ -48,12 +48,17 @@ public class AutomationPageSteps {
 
     @Then("verify the searching results")
     public void verify_the_searching_results() {
-        autoPage.assertMyMessage();
+        autoPage.assertSearchResults();
     }
 
 
     @When("click on first result")
-    public void clickOnFirstResult() {
+    public void click_On_First_Result() {
         autoPage.clickOnFirstSearchResult();
+    }
+
+    @Then("verify Testing and Automation page is opened")
+    public void verify_Testing_And_Automation_Page_Is_Opened() {
+        autoPage.assertAutomationPageOpen();
     }
 }

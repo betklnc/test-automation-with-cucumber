@@ -15,6 +15,7 @@ import java.util.List;
 public class AutomationPage extends PageAbstractClass {
 
     WebDriver driver;
+    final String automationPageUrl = "https://obss.com.tr/en/yetkinlikler/yetenekler/yazilim-testi-otomasyonu/";
 
     @FindBy(css = "article.search-post")
     private List<WebElement> rows;
@@ -41,11 +42,16 @@ public class AutomationPage extends PageAbstractClass {
         sendKeysFunction(searchTextArea, "Automation");
     }
 
-    public void assertMyMessage() {
+    public void assertSearchResults() {
         Assertion(rows, 8);
     }
 
     public void clickOnFirstSearchResult() {
         clickFunction(firstSearchResult);
+    }
+
+    public void assertAutomationPageOpen() {
+        String currentUrl = driver.getCurrentUrl();
+        AssertAutomationPageOpened(currentUrl,automationPageUrl);
     }
 }
