@@ -11,6 +11,7 @@ import utilities.Driver;
 
 import java.time.Duration;
 import java.util.List;
+
 import static org.testng.Assert.assertEquals;
 
 
@@ -43,9 +44,13 @@ public abstract class PageAbstractClass {
         assertEquals(actual, expected);
     }
 
-    public void scrollToEnd(int scrollHeight){
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+    public void scrollToEnd(int scrollHeight) {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript(String.format("window.scrollBy(0,%d)", scrollHeight));
+    }
+
+    public void assertionPageFooter(WebElement actual, Boolean expected) {
+        assertEquals(actual.isDisplayed(), expected);
     }
 }
 

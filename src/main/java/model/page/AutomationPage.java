@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 import java.util.List;
 
 public class AutomationPage extends PageAbstractClass {
@@ -24,6 +23,11 @@ public class AutomationPage extends PageAbstractClass {
 
     @FindBy(xpath = "/html/body/div[3]/div/div[2]/div/div[2]/article[1]/h2/a")
     private WebElement firstSearchResult;
+
+    @FindBy(xpath = "/html/body/div[5]")
+    private WebElement pageFooter;
+
+
 
     public AutomationPage() {
         driver = Driver.getDriver();
@@ -52,6 +56,10 @@ public class AutomationPage extends PageAbstractClass {
     }
 
     public void scrollToEndPage() {
-       scrollToEnd(10000);
+        scrollToEnd(10000);
+    }
+
+    public void assertPageFooter(){
+        assertionPageFooter(pageFooter, true);
     }
 }

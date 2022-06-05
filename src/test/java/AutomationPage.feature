@@ -1,17 +1,14 @@
 Feature:  Obss Automation Web Page Test
 
-  Background:
+  Scenario: Verify Automation search results
     Given navigate to website
     And click on search icon
-
- Scenario: Verify Automation search results
-   When type Automation on search box
-   Then verify the searching results
-   When click on first result
-   Then verify Testing and Automation page is opened
-   When scroll to the end
-   Then verify the page footer
-
+    When type Automation on search box
+    Then verify the searching results
+    When click on first result
+    Then verify Testing and Automation page is opened
+    When scroll to the end
+    Then verify the page footer
 
 
  # Scenario: Verify Testing And Automation page

@@ -1,20 +1,16 @@
 package step_definiton;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import model.page.AutomationPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
-
 import java.time.Duration;
 
 public class AutomationPageSteps {
-
     private WebDriver driver;
 
     AutomationPage autoPage = new AutomationPage();
@@ -22,18 +18,15 @@ public class AutomationPageSteps {
     @Given("navigate to website")
     public void navigate_to_website() {
         driver = Driver.getDriver();
-
         driver.manage().window().maximize();
         driver.get("https://obss.com.tr/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
         try {
             driver.findElement(By.id("cookieAcceptance")).click();
         } catch (Exception ex) {
             // todo
         }
-        //if(!driver.findElements(By.id("cookieAcceptance")).isEmpty()) {
-        //    driver.findElement(By.id("cookieAcceptance")).click();
-        //}
     }
 
     @Given("click on search icon")
@@ -50,7 +43,6 @@ public class AutomationPageSteps {
     public void verify_the_searching_results() {
         autoPage.assertSearchResults();
     }
-
 
     @When("click on first result")
     public void click_On_First_Result() {
@@ -69,6 +61,11 @@ public class AutomationPageSteps {
 
     @Then("verify the page footer")
     public void verify_The_Page_Footer() {
-
+       autoPage.assertPageFooter();
+    }
+    @After
+    public void quitDriver() throws InterruptedException{
+        Thread.sleep(2000);
+        Driver.closeDriver();
     }
 }
