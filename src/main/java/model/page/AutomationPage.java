@@ -1,15 +1,11 @@
 package model.page;
 
-import io.opentelemetry.exporter.logging.SystemOutLogExporter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class AutomationPage extends PageAbstractClass {
@@ -43,7 +39,7 @@ public class AutomationPage extends PageAbstractClass {
     }
 
     public void assertSearchResults() {
-        Assertion(rows, 8);
+        assertionSearchResults(rows, 8);
     }
 
     public void clickOnFirstSearchResult() {
@@ -52,6 +48,10 @@ public class AutomationPage extends PageAbstractClass {
 
     public void assertAutomationPageOpen() {
         String currentUrl = driver.getCurrentUrl();
-        AssertAutomationPageOpened(currentUrl,automationPageUrl);
+        assertionAutomationPageOpened(currentUrl, automationPageUrl);
+    }
+
+    public void scrollToEndPage() {
+       scrollToEnd(10000);
     }
 }

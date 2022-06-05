@@ -1,5 +1,6 @@
 package model.page;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,12 +35,17 @@ public abstract class PageAbstractClass {
         slc.selectByVisibleText(element);
     }
 
-    public void Assertion(List<WebElement> actual, int expected) {
+    public void assertionSearchResults(List<WebElement> actual, int expected) {
         assertEquals(actual.size(), expected);
     }
 
-    public void AssertAutomationPageOpened(String actual, String expected) {
+    public void assertionAutomationPageOpened(String actual, String expected) {
         assertEquals(actual, expected);
+    }
+
+    public void scrollToEnd(int scrollHeight){
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript(String.format("window.scrollBy(0,%d)", scrollHeight));
     }
 }
 

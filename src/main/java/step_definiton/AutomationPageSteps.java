@@ -61,4 +61,14 @@ public class AutomationPageSteps {
     public void verify_Testing_And_Automation_Page_Is_Opened() {
         autoPage.assertAutomationPageOpen();
     }
+
+    @When("scroll to the end")
+    public void scroll_To_The_End() {
+        autoPage.scrollToEndPage();
+    }
+
+    @Then("verify the page footer")
+    public void verify_The_Page_Footer() {
+
+    }
 }

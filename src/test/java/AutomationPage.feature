@@ -9,7 +9,8 @@ Feature:  Obss Automation Web Page Test
    Then verify the searching results
    When click on first result
    Then verify Testing and Automation page is opened
-
+   When scroll to the end
+   Then verify the page footer
 
 
 
