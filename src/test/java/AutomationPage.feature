@@ -1,6 +1,6 @@
 Feature: Automation Web Page Test
 
-  Scenario: Verify Automation search results
+  Scenario: Go to website and verify test results
     Given navigate to website
     And click on search icon
     When type Automation on search box
